@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // reverse number  task1..............................
+    //     function reverse(x){
+    //     var i,a="";
+    //     var z= x.toString();
+       
+    //    var reverse_num =z.split("");
+    //    for(i=reverse_num.length-1;i>=0;i--){
+    //          a+= reverse_num[i];
+               
+    //         }
+    //         console.log(a);
+    //     }
+    //     reverse(3456678);
+    //   ..........................
+
+    //............albhabetical order task2..........................
+    // function albha(x){
+  
+    // var split=x.split("");
+    // var albha=split.sort();
+    // var output=albha.join("");
+     
+    // console.log(output);
+    // }
+    //  albha("ananthi");
+    // .......................................................
+
+    // vowel count ............................................
+    
+//     var str= "I will definitely achieve my goal";
+//     var vowel="aeiou"
+//     var x=str.toLowerCase();
+//         var count=0;
+//     console.log(x);
+//     for(var i=0;i<=x.length; i++){
+//        if(vowel.indexOf(x[i])!==-1){
+//          count+=1;
+//     }  
+//    }
+//  console.log(count);
+ 
+//   ....................................... 
+// const arr = [
+//   { id: 15 },
+//   { id: -1 },
+//   { id: 0 },
+//   { id: 3 },
+//   { id: 12.2 },
+//   {},
+//   { id: null },
+//   { id: NaN },
+//   { id: "undefined" },
+// ];
+// let invalidEntries = 0;
+// const arrByID = arr.filter((item)=>{
+//     if(Number.isFinite(item.id) && item.id !==0){
+//         console.log( "numberistrue")
+      
+//         return true
+//     }
+//     invalidEntries++;
+//     console.log( "invalidEntries",invalidEntries)
+//     return false
+// });
+// console.log(invalidEntries)
+
+// console.log( arrByID)
+// // .............................................
+// const filtered = [12, 5, 8, 130, 44].filter((item)=>item >= 10);
+// console.log(filtered)
+// .....................................
+const inventory = [
+  { name: "apples", quantity: 2 },
+  { name: "bananas", quantity: 0 },
+  { name: "cherries", quantity: 5 },
+];
+const ansewr=inventory.find((item)=>item.name==="cherries")
+console.log(ansewr)
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <script>
+        var array=["one", "two","three","four","five","six"];
+        var i;
+        var index=length-1;
+        var odd=[];
+        var x;
+        var y;
+        var even=[];
+           for(i=0; i<=array.length-1; i++){
+             if(i===0 || i % 2==0){
+                odd.push(array[i]); 
+             }
+              else {
+                even.push(array[i]);
+              } 
+            }
+            console.log("Odd_list:");
+             for(i=0;i<=odd.length-1; i++){
+              x= odd[i];
+              
+              console.log(x);        
+             } console.log("Even_list:");
+             for(i=0;i<=even.length-1; i++){
+                y=even[i];
+             console.log(y);
+             } 
+            console.log("pop_value")
+console.log(odd.pop());
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+}
+
+form{
+    margin:2rem auto;
+    padding:1.5rem;
+    box-shadow:0px 5px 10px rgba(0,0,0,6);
+    border-radius: 10px;
+    width:80%;
+    display:flex;
+    flex-wrap:wrap;  
+}
+.button{
+    column-gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0px;
+    width: 100%;
+}
+button{
+    height: 1.5rem;
+    width: 4rem;
+}
+.container{
+    margin: 0 auto;
+    padding:1.5rem;
+    box-shadow:0px 5px 10px rgba(0,0,0,6);
+    border-radius: 10px;
+    width:50%;
+}h1{
+    display:flex;
+    align-items:start;
+    justify-content: center;
+    padding-top: 20px;
+}
+table{
+    width:100%;
+    margin-top: 10px;
+}
+th{
+    text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+    <h1>Enter the details of student information: </h1>
+   <form id="form">
+   
+    <label for="name"> Enter your Name:
+        <input type="name" placeholder="Enter your name" id="name">
+    </label>
+    <label for="email"> Enter your email:
+        <input type="text" placeholder="Enter your email" id="email">
+    </label>
+    <label for="phoneno"> Enter your Number:
+        <input type="text" placeholder="Enter your number" id="phoneno">
+    </label>
+   <div class="button">
+    <button type="button" id="submit" onclick="add()"> Submit</button>
+    <button type="button" id="update" onclick="update()">update</button>
+  </div>
+   </form>
+   <br>
+   <br>
+   <div class="container">
+   <div id="classroom" >
+    <h2>list of student</h2>
+       
+    <table  id="person_list">
+       
+            <!-- <tr><th>name</th>
+                <th>email</th>
+                <th>phoneno</th>
+                <th>Action</th>
+            </tr> -->
+
+
+    </table>
+   </div></div>
+   
+</body>
+<script>
+var classroom=[];
+
+
+form=document.getElementById("form")
+ function add(){
+    var person={};
+    var input_name=document.getElementById("name").value;
+    var input_email=document.getElementById("email").value;
+    var input_phone=document.getElementById("phoneno").value;
+
+    person.name=input_name;
+    person.email=input_email;
+    person.phoneno=input_phone;
+    
+    classroom.push(person);
+    
+    // console.log(person);
+    console.log("classroom",classroom);
+    let table_header=Object.keys(classroom)[0];
+    console.log("table_header",table_header)
+
+student();
+}
+
+function student(){
+var person_list= document.getElementById("person_list");
+let temp="";
+person_list.innerHTML="";
+    temp=`<tr><th>NAME<th><th>EMAIL<th><th>PHONENO<th><th>ACTION<th><tr>`
+        // person_list.innerHTML+=temp;
+ for(i=0;i<=classroom.length-1;i++){
+    console.log(classroom[i]);
+    person_list.innerHTML+=
+ `<tr><td>${classroom[i].name}</td><td>${classroom[i].email}</td><td>${classroom[i].phoneno}</td><td><button onclick="edit_value('ananthi')" style="border:none">edit</button></td> </tr>`;
+
+}
+
+}
+
+function edit_value(index){
+
+    console.log(index);
+   var e_name=classroom[i].name;
+        console.log(e_name);
+    // var name= document.getElementById("name").value =e_name;
+    // var email=document.getElementById("email").value;
+    // // var phone=document.getElementById("phoneno").value;
+     
+
+
+
+
+     var submit= document.getElementById("submit");
+     submit.innerText="update";
+    
+         
+   
+     
+     
+}
+
+function updated(){
+    
+}
+
+</script>
+</html>

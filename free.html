@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+// function largestOfFour(arr) {
+//   const results = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     let largestNumber = arr[i][0];
+//   //   console.log("largerest"+largestNumber);
+  
+  
+//   //  console.log("**************");
+//    for (let j = 1; j < arr[i].length; j++) {
+  
+//       if (arr[i][j] > largestNumber) {
+//         largestNumber = arr[i][j];
+//       }
+//      }
+//     results[i] = largestNumber;
+//    }
+
+//   return results;
+// }
+
+// largestOfFour([
+// [4, 5, 1, 3], 
+// [13, 27, 18, 26],
+// [32, 35, 37, 39],
+// [1000, 1001, 857, 1]]);
+// .................................................................
+// function list(...args) {
+//   return args;
+// }
+// function addArguments(arg1, arg2) {
+//   return arg1 + arg2;
+// }
+// console.log(list(1, 2, 3)); // [1, 2, 3]
+// console.log(addArguments(1, 2)); // 3
+
+// // Create a function with a preset leading argument
+// const leadingThirtySevenList = list.bind(null, 37);
+// console.log(leadingThirtySevenList())
+// console.log(leadingThirtySevenList(1,2,3));
+
+// // Create a function with a preset first argument.
+// const addThirtySeven = addArguments.bind(null, 37);
+// console.log(addThirtySeven(5)); // 42
+// console.log(addThirtySeven(5, 10));//42
+// ................................................
+// const myArray = ['zero', 'one', 'two'];
+// myArray.myMethod = function (sProperty) {
+//   // console.log(this[sProperty] )
+//   // console.log(this)
+//   // console.log(arguments.length )
+//   console.log(arguments.length > 0 ? this[sProperty] : this);
+// };
+// myArray.myMethod(); // "zero,one,two"
+// myArray.myMethod(1);// one
+// setTimeout(myArray.myMethod, 1.0*1000,2); // prints "[object Window]" after 1 second
+// .....................................
+// class LateBloomer {
+//   constructor() {
+//     this.petalCount = Math.floor(Math.random() * 12) + 1;
+//   }
+//   bloom() {
+//     // Declare bloom after a delay of 1 second
+   
+//     setTimeout(this.declare.bind(this), 1000);
+//   }
+//   declare() {
+//     console.log(`I am a beautiful flower with ${this.petalCount} petals!`);
+//   }
+// }
+// const flower = new LateBloomer();
+// flower.bloom();
+// ........................................
+class Base {
+  static baseProp = "base";
+}
+class Derived extends Base {
+  static derivedProp = "derived";
+}
+const BoundDerived = Derived.bind();
+console.log(BoundDerived.baseProp); // "base"
+console.log(BoundDerived.derivedProp); // undefined
+console.log(new BoundDerived() instanceof Derived); // true
+</script>
+
+</body></html>

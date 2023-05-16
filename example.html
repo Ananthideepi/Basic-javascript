@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// const arrayLike = {
+//   length: 7,
+//   0: "a",
+//   1: "b",
+//   2: "c",
+// };
+// for (const entry of Array.prototype.entries.call(arrayLike)) {
+//   console.log(entry);
+// }
+// ............................
+
+//  const arr1 = [0, 1, 2, [3, 4]];
+
+// // console.log(arr1.flat());
+// // Expected output: Array [0, 1, 2, 3, 4]
+// const arr2 = [1, 2, [3, 4, [5, 6]]];
+// //  const arr2 = [0, 1, 2, [[[3, 4]]]];
+//  console.log(arr2.flat(Infinity));
+//  console.log("flat 1:",arr2.flat(1));
+//  console.log("flat 1:",arr2.flat(2));
+// console.log("flat 2:=="+arr2.flat(2));
+// console.log("flat 3:=="+arr2.flat(3));
+// Expected output: Array [0, 1, 2, Array [3, 4]]
+  // ..........................................
+//   const arr = [1, 2, 3, 4];
+
+// const ans=arr.flatMap((x) => [x, x * 2]);
+// console.log("anserw",ans)
+// // is equivalent to
+
+// const n = arr.length;
+// // console.log(arr)
+// const acc = [n * 2];
+//  console.log("acc",acc)
+// for (let i = 0; i < n; i++) {
+
+//   const x = arr[i];
+//   acc[i * 2] = x;
+//   acc[i * 2 + 1] = x * 2;
+//   console.log("i",i)
+//   console.log("x",arr[i])
+//   console.log( " acc[i * 2]" ,acc[i * 2] = x)
+//   console.log("acc[i * 2 + 1] = x * 2",acc[i * 2 + 1] = x * 2)
+// }
+// console.log(ans)
+// ..........................................................................
+// const numbers=[1,2,3,4,5,6]
+// const number=numbers.filter((item)=>item %2==0 ? "even":"odd"
+// )
+// // .............................................
+// const a = [5, 4, -3, 20, 17, -33, -4, 18];
+// //         |\  \  x   |  | \   x   x   |
+// //        [4,1, 4,   20, 16, 1,       18]
+// const arr=[]
+// const result = a.flatMap((n) => {
+//   if (n < 0) {
+   
+//       return [];
+//   }
+//   console.log(n % 2 === 0  ?  [n] : [n - 1, 1])  
+//   return n % 2 === 0 ? 
+//   [n] : [n - 1, 1];
+// });
+// ......................
+// const arrayLike = {
+//   length: 3,
+//   0: "foo",
+//   2: 4,
+// };
+// Array.prototype.push.call(arrayLike, 1, 2);
+// console.log(arrayLike);
+// .................................
+// const names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+// const countedNames = names.reduce((allNames, name) => {
+//   const currCount = allNames[name]??0;
+//   // console.log("allNames[name]",allNames[name])
+// // console.log(`currcount:${currCount}`)
+// // console.log("allnames",{...allNames})
+// //  console.log( {[name]: currCount + 1})
+//   return {
+//     ...allNames,
+//     [name]: currCount + 1,
+//   };
+// }, {});
+// console.log(countedNames)
+// // ...................................
+// const vegetables = ["parsnip", "potato"];
+// const moreVegs = ["celery", "beetroot"];
+// console.log(vegetables.push(...moreVegs))
+// console.log(vegetables)
+// .................................
+// grouping objects by a property
+// const people = [
+//   { name: "Alice", age: 21 },
+//   { name: "Max", age: 20 },
+//   { name: "Jane", age: 20 },
+// ];
+// function groupBy(objectArray, property) {
+//   return objectArray.reduce((acc, obj) => {
+//     console.log("obj[property]",obj[property])
+//     const key = obj[property];
+//     const curGroup = acc[key] ?? [];
+
+//     return { ...acc, [key]: [...curGroup, obj] };
+//   }, {});
+// }
+//  const groupedPeople = groupBy(people, "age");
+//   console.log(groupedPeople);
+// .................................
+// function runPromiseInSequence(arr, input) {
+//  const arra= arr.reduce(
+//     (promiseChain, currentFunction) => 
+//   // console.log(promiseChain, currentFunction)
+//     promiseChain.then(currentFunction),
+//     Promise.resolve(input),
+//     );
+//   return arra;
+// }
+// // promise function 1
+// function p1(a) {
+//   return new Promise((resolve, reject) => {
+//     console.log(a*5)
+//     resolve(a * 5);
+//   });
+// }
+// // promise function 2
+// function p2(a) {
+//   return new Promise((resolve, reject) => {
+//     console.log(a*2)
+//     resolve(a * 2);
+//   });
+// }
+// // function 3 - will be wrapped in a resolved promise by .then()
+// function p3(a) {
+//   console.log(a*3)
+//   return a * 3;
+// }
+// // promise function 4
+// function p4(a) {
+//   return new Promise((resolve, reject) => {
+//     console.log(a*4)
+//     resolve(a * 4);
+//   });
+// }
+// const promiseArr = [p1, p2, p3,p4];
+// runPromiseInSequence(promiseArr, 10).then(console.log);
+// ..................................
+// const array = ["a", "b"];
+// const elements = [0, 1, 2];
+// console.log(array.push(elements));
+// console.log(array)
+// // ..................................
+// // Building-blocks to use for composition
+// const double = (x) => 2 * x;
+// const triple = (x) => 3 * x;
+// const quadruple = (x) => 4 * x;
+
+// console.log(functions)
+// // Function composition enabling pipe functionality
+// const pipe =
+//   (...functions) =>
+//   (initialValue) =>
+//     functions.reduce((acc, fn) => fn(acc), initialValue);
+
+// // Composed functions for multiplication of specific values
+// const multiply6 = pipe(double, triple);
+// const multiply9 = pipe(triple, triple);
+// const multiply16 = pipe(quadruple, quadruple);
+// const multiply24 = pipe(double, triple, quadruple);
+// .................................................
+// const inventory = [
+//   { name: "asparagus", type: "vegetables", quantity: 5 },
+//   { name: "bananas", type: "fruit", quantity: 0 },
+//   { name: "goat", type: "meat", quantity: 23 },
+//   { name: "cherries", type: "fruit", quantity: 5 },
+//   { name: "fish", type: "meat", quantity: 22 },
+// ];
+// function myCallback({ quantity }) {
+//   return quantity > 5 ? "ok" : "restock";
+// }
+// const result2 = inventory.group(myCallback);
+// console.log(result2);
+// ......................................
+// console.log([1, 2, 3, 4].flatMap((x) => [x * 2]))
+// ........................................
+// const set = new Set(["foo", "bar", "baz", "foo","hhh"]);
+// Array.from(set);
+// console.log(Array.from(set))
+// [ "foo", "bar", "baz" 
+// // ............................................
+// const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
+// const myArrayWithNoDuplicates = myArray.reduce((accumulator, currentValue) => {
+//   console.log("accumulator",accumulator,"currentValue",currentValue)
+//   // console.log(!accumulator.includes(currentValue))
+//   if (!accumulator.includes(currentValue)) {
+//     // console.log([...accumulator, currentValue])
+//     return [...accumulator, currentValue];
+//   }
+//   console.log("final",accumulator)
+//   return accumulator;
+// }, []);
+
+// console.log(myArrayWithNoDuplicates);
+// // ..........................................
+// numbers = [-5, 6, 2, 0];
+
+// const doubledPositiveNumbers = numbers.reduce((accumulator, currentValue) => {
+//   if (currentValue > 0) {
+//     const doubled = currentValue * 2;
+//     console.log(["...accumulator",...accumulator,"doubled", doubled])
+//     return [...accumulator, doubled];
+//   }
+// console.log(accumulator)
+//   return accumulator;
+// }, []);
+
+// console.log(doubledPositiveNumbers);
+// .....................................
+// const arr1 = ["it's Sunny in", "", "California"];
+// const ans= arr1.map((x) => x.split(" "));
+// const flat=arr1.flatMap((x) => x.split(" "));
+// console.log(arr1)
+// console.log(ans)
+// console.log(flat)
+// ............................................
+// console.log([,2 , ].every((x) => x !== undefined)); // true
+// console.log([,2 ].every((x) => x === 2)); // true
+
+// ....................................................................
+// arr = [1, 2, 3];
+// arr.every((elem, index, arr) => {
+// console.log("arrpush"+arr.push("new"));
+// //    arr.push("new");
+//   console.log(`[${arr}][${index}] -> ${elem}`);
+//   return elem ;
+// })
+// ......................................................
+// let words = ["spray", "limit", "exuberant", "destruction", "elite", "present"];
+
+// const modifiedWords = words.filter((word, index, arr) => {
+//   console.log(arr[index + 1] += " extra")
+//   console.log(words.length<6)
+//   return words.length < 6 ;
+// })
+// ..................................................
+// const arrayLike = {
+//   length: 3,
+//   0: "a",
+//   1: "b",
+//   2: "c",
+// };
+// for (const entry of Array.prototype.entries.call(arrayLike)) {
+//   console.log(entry);}
+// .........................
+// const array1 = ['a', 'b', 'c'];
+
+// const iterator1 = array1.entries();
+// console.log(iterator1);
+// ..............................................................
+//  const a=["1","2","3","4","5"]
+// for (const element of a.entries()) {
+//   console.log(element);
+// }
+// console.log(iterator1.next().value);
+// // Expected output: Array [0, "a"]
+
+// console.log(iterator1.next().value);
+// // Expected output: Array [1, "b"]
+// console.log(iterator1.next().value);
+// Expected output: Array [1, "b"]
+// .................................................................
+// words = ["spray", "limit", "exuberant", "destruction", "elite", "present"];
+// const deleteWords = words.filter((word, index, arr) => {
+//     console.log(arr.push("aaaaaa"))
+//     console.log(arr)
+//     console.log(arr.pop("limit"))
+
+//   arr.pop();
+
+//   return word.length < 6;
+// });
+// .........................
+// const people=[
+// {"name":"ananthi", age:10},
+// {"name":"deepika", age:20},
+// {"name":"kalish", age:30},
+// {"name":"karuna", age:30},
+// {"name":"kowshik", age:40},
+// ]
+
+// const sort=people.filter((inital,item)=>{
+//  if(inital[item.age]==" "){
+//  return 0  
+//  }else{
+// inital[item.age].push(item)
+//  }
+// },0)
+// ...................................................................................
+
+// find large number in array
+//  function largeNumber(arr){
+
+// console.log(arr.map((item)=>item.sort((a,b) =>a-b)).map((item)=>item[item.length-1]))
+
+// return arr.map((item)=>item.sort((a,b) =>a-b)).map((item)=>item[item.length-1])
+
+// }
+
+// largeNumber([[2,11,4,6],[33,22,44,55],[14,15,16,58,17],[88,444,4444,3]])
+// ..................................................................................
+    // function func(arr) {
+    //     console.log("age filtered :"+ arr.filter((item)=>item>=18));
+    //     return arr.filter((item)=>item>=18);
+       
+    // }
+    // func( [24, 33, 16, 40]);
+// .....................................................................................
+// function fibo(numbera){
+// let n1 = 0, n2 = 1, nextTerm;
+
+// console.log('Fibonacci Series:');
+
+// for (let i = 1; i <= numbera; i++) {
+//     // console.log(n1);
+//     nextTerm = n1 + n2;
+//     //  console.log("nextTerm"+nextTerm);
+//     n1 = n2;
+//     // console.log("n1:::"+n1);
+//     n2 = nextTerm;
+//     console.log("n2:::"+n2);
+// }
+// }
+// fibo(7)
+</script>
+</body>
+</html>   
